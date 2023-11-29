@@ -17,6 +17,7 @@
 --dark-dim:rgba(0, 0, 0, 0.5);
 --dark-border:#111;
 --highlight-color:rgb(22, 189, 201);
+--TextColor-Yellow:;
     
         /*TYPOGRAPHY HERE SIZES */
         --main-font:'Poppins', sans-serif;
@@ -83,6 +84,12 @@
             align-items: center;
             justify-content: center;
         }
+
+
+        /*--------***----------***-----*/
+
+
+
 
         /*--------+-----*----*---------*/
 
@@ -249,24 +256,41 @@
 
 .dark__theme{
     background-color: var(--body-color-dark);
-    color: var(--text-color-light);
+    color: var(--highlight-color);
 }
-.dark__them .them__btn{
+.dark__theme .them__btn{
     box-shadow: 2px 2px 4px var(--shadow-dim-bottom),
     -2px -2px 4px var(--dark-bright);
     border: 0.18rem solid var(--dark-border);
 }
-.dark__them .clock__container{
+
+/*---------Clock Container--------*/
+
+
+/* Add this for dark theme */
+.dark__theme .clock_container {
+    background-color: #000; /* Set background to black for dark theme */
+    border: 0.15rem solid var(--highlight-color);
+    border-color: var(--dark-border); 
+    
+}
+
+/*
+.dark__theme .clock__container{
     box-shadow: 6px 6px 10px var(--dark-dim),
                 -4px -4px 10px var(--dark-bright);
-  border: 0.15rem solid var(--dark-border);
+    border: 0.15rem solid var(--dark-border);
+    background-color: var(--body-color-dark);
+    
 }
+*/
 .dark__theme .clock{
     border: 0.16rem solid var(--dark-border);
     box-shadow: inset 3px 3px 5px var(--shadow-dim-bottom),
                 inset -2px -2px 5px var(--shadow-bright-uper);
 
 }
+
 
 /* issue was here of not showing the icon of sun */
 /* Changing theme icons */
