@@ -79,21 +79,33 @@ header{
 .nav_list *{
     padding: 0 8px;
     text-decoration: none;
-    color: var(--text-color-dark);
+    color: var(--text-color-light);
+    font-family: var(--main-font);
+    font-size: 1rem;
+    
+
 }
 /* Name logo */
-.name_side{
+.name_logo{
     margin-right: 44rem;
     text-decoration: none;
-    color:var(--text-color-dark);
+    color:var(--TextColor-Yellow);
+    font-family: var(--main-font);
+    font-size: var(--biggest-size);
+    font-weight: bold;
+   box-shadow: inset 1px 1px 1px var(--shadow-dim-bottom),
+                inset -1px -1px 1px var(--shadow-bright-uper);
+
 }
 
 /* ABOUT ME SECTION HERE */
 .about_section{
     display: flex;
+    line-height: 1.7;
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    font-family:Helvetica, sans-serif;
 
 }
 /* div */
@@ -105,6 +117,7 @@ header{
 }
 .color_name{
     color: var(--extra-color);
+   
 }
 
 /* Skills STart From Here */
@@ -145,6 +158,7 @@ header{
 /* Style for boxes in the first line */
 .html_box, .css_box, .javascript_box, .react_box {
     flex-basis: 15%; /* Each box takes up 15% of the width to have four boxes in one line */
+   
 }
 
 /* Style for boxes in the second line */
@@ -174,3 +188,79 @@ header{
     margin-top: 1rem;
     margin-left: 2rem;
   }
+  .projects_section p{
+    position: relative;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    padding-bottom: 1.5rem;
+    
+    &::after{
+        content:"";
+        position: absolute;
+        border-bottom:2px solid var(--dark-border);
+        bottom: 0;
+        left: 0;
+        width: 50rem;
+        height: 1px;       
+     }
+  }
+         /* .projects_section, .lst_li{
+        
+        } */
+
+
+
+        /*--RECOMMENDATION---SECTION--START--HERE---*/
+
+        .recommendation_section, h2{
+           margin-top: 2rem;
+        }
+        
+        .recommendation_box > div{
+            width: 100px;
+            height: 200px;
+            border: 2px solid var(--dark-border);
+            text-align: center;
+            margin: 1rem;
+        }
+        
+        .recommendation_box{  
+            display: flex;
+            margin-left: 3rem;
+        }
+
+        .review_box{
+            flex-basis: 25%;
+            border-radius: 5px;
+        }
+        
+        .write_recommend{
+        margin-top: 2rem;
+        text-align: center;
+        margin-right: 5rem;
+        width: 100%;
+        }
+        #name{
+            margin-top:0.75rem;
+            width: 32rem;
+        }
+        #message{
+            margin-top: 1rem;
+        }
+        .submit{
+            margin-top: 1.5rem;
+            text-decoration: none;
+            border: 2px solid var(--dark-border);
+            border-radius: 3px;
+            padding: 5px;
+            font-family: var(--main-font);
+            font-weight: bold;
+            box-shadow: var(--light-blue);
+            font-size: medium;
+            background-color: var(--extra-color);
+            color: var(--text-color-light);
+            width: 5rem;
+            
+        }
+        
+
