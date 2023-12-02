@@ -1,0 +1,176 @@
+
+/* google fonts */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+
+/*------------------------------------*/
+/*CSS VARIABLES HERE*/
+
+:root{
+/*Colors*/
+--body-color:#FFFFFF;
+--body-color-light:#dedede;
+--body-color-dark:#222;
+--text-color-light:#fcfcfc;
+--text-color-dark:#222;
+--extra-color:#00CBC7;
+--shadow-bright-uper:rgba(255, 255, 255, 0.8);
+--shadow-dim-bottom:rgba(17, 17, 17, 0.3);
+--dark-bright:rgba(255, 255, 255, 0.05);
+--light-blue:#E0F2FE;
+--dark-blue:#44619D;
+--dark-border:#111;
+--highlight-color:#02CAC7;
+--header-color:#00C5C6;
+--font-color:#04a1a1;
+
+--TextColor-Yellow:#F9C659;
+
+        /*TYPOGRAPHY HERE SIZES */
+        --main-font:'Poppins', sans-serif;
+        --biggest-size:1.5rem;
+        --normal-size:0.9rem;
+        --small-size:0.7rem;
+
+}
+
+
+  /*TypoGraphy for Larger Screen*/
+        @media screen and (min-width: 1250px) {
+            :root {
+                --biggest-size: 2rem;
+                --normal-size: 1.2rem;
+                --small-size: 0.9rem;
+            }
+        }
+
+
+
+
+
+
+
+        /* Base Start From Here */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+ background-color:var(--body-color);
+ margin: auto;
+ width: auto;
+}
+
+header,.nav_list,li{
+    display: flex;
+    gap: 1rem;
+}
+
+header{
+    flex-direction: row;
+    align-items: center;
+    background-color: var(--extra-color);
+    justify-content:space-around;
+    height: 4rem;
+}
+
+.nav_list *{
+    padding: 0 8px;
+    text-decoration: none;
+    color: var(--text-color-dark);
+}
+/* Name logo */
+.name_side{
+    margin-right: 44rem;
+    text-decoration: none;
+    color:var(--text-color-dark);
+}
+
+/* ABOUT ME SECTION HERE */
+.about_section{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+}
+/* div */
+.img_mine{
+    width: 30%;
+    height: 30%;
+    /* background-image: none; */
+
+}
+.color_name{
+    color: var(--extra-color);
+}
+
+/* Skills STart From Here */
+
+    h2{
+        margin-left: 2rem;
+        color: var(--font-color);
+        text-shadow: var(--dark-border);
+        font-family: var(--main-font);
+    } 
+    /* .main_section{} main hero section  */
+
+    /* .skills_section{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        height: auto;
+        width: auto;
+        margin-left: 1.5rem;
+    } Not using */
+
+ /* Common style for all boxes */
+.skills_section > div {
+    width: 100px;
+    height: 200px;
+    border: 2px solid var(--dark-border);
+    text-align: center;
+    margin: 2.5rem;
+}
+
+/* Style for the first line of boxes */
+.skills_section {
+    display: flex;
+    flex-wrap: wrap;  /* Allowing all boxes to the next line*/
+}
+
+/* Style for boxes in the first line */
+.html_box, .css_box, .javascript_box, .react_box {
+    flex-basis: 15%; /* Each box takes up 15% of the width to have four boxes in one line */
+}
+
+/* Style for boxes in the second line */
+.node_box,.tailwind_box {
+    flex-basis: 15%; /* Each box takes up 15% width in the second line */
+}
+
+/* Additional styling for Node to ensure it's in the second line */
+/* .node_box{
+    order:1; 
+} */
+
+
+  /*--Projects Section start Here--*/
+  h6{
+    font-family: var(--main-font);
+    font-size: var(--small-size);
+    margin-top: 1.5rem;
+  }
+  .projects_section ul{
+    list-style-type: disc;
+    margin-left: 2rem;
+  }
+
+  .projects_section li{
+    display: list-item;
+    margin-top: 1rem;
+    margin-left: 2rem;
+  }
