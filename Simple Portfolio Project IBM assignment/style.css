@@ -150,11 +150,23 @@ header{
 }
 
 /* Style for the first line of boxes */
-.skills_section {
+.skills_section{
     display: flex;
     flex-wrap: wrap;  /* Allowing all boxes to the next line*/
+   
 }
-
+.skills_section, p{
+     margin-top: 2rem;
+   
+}
+.skills_section, span{
+     margin-top: 2rem;
+   
+}
+/* .skills_section, div>img{
+    width: 20px;
+   
+} */
 /* Style for boxes in the first line */
 .html_box, .css_box, .javascript_box, .react_box {
     flex-basis: 15%; /* Each box takes up 15% of the width to have four boxes in one line */
