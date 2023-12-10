@@ -1,0 +1,320 @@
+/* google fonts */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+
+/*------------------------------------*/
+/*CSS VARIABLES HERE*/
+
+:root{
+/*Colors*/
+--body-color-light:#dedede;
+--body-color-dark:#222;
+--text-color-light:#fcfcfc;
+--text-color-dark:#222;
+--shadow-bright-uper:rgba(255, 255, 255, 0.8);
+--shadow-dim-bottom:rgba(17, 17, 17, 0.3);
+--dark-bright:rgba(255, 255, 255, 0.05);
+--dark-dim:rgba(0, 0, 0, 0.5);
+--dark-border:#111;
+--highlight-color:rgb(22, 189, 201);
+--TextColor-Yellow:;
+    
+        /*TYPOGRAPHY HERE SIZES */
+        --main-font:'Poppins', sans-serif;
+        --biggest-size:1.5rem;
+        --normal-size:0.9rem;
+        --small-size:0.7rem;
+
+}
+
+        /*
+        margin inline;
+        padding inline;
+        flex direction;
+        display flex;
+        align items;
+        align-items: center;
+        justify-content: center;
+        100vh;
+        position: relative;
+        display: grid;
+        place-items: center;
+        align-self: flex-end;
+        opacity: 1;
+    transform: rotate(90deg);
+        gap;
+        box-shadow: inset 3px 3px 5px var(--shadow-dim-bottom),
+                inset -2px -2px 5px var(--shadow-bright-uper);
+
+        */
+
+        /*TypoGraphy for Larger Screen*/
+        @media screen and (min-width: 1250px) {
+            :root {
+                --biggest-size: 2rem;
+                --normal-size: 1.2rem;
+                --small-size: 0.9rem;
+            }
+        }
+
+        
+        /* ---------*Base HERE*-------- */
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            font-family: var(--main-font);
+            background-color: var(--body-color-light);
+            
+        }
+        .main{
+            transition: 0.3s ease-out;
+        }
+        .main_container{
+            max-width: 1250px;
+            margin-inline: 1rem;
+            padding-inline:0.5rem;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+
+        /*--------***----------***-----*/
+
+
+
+
+        /*--------+-----*----*---------*/
+
+        /*---------Theme Button--------*/
+
+        .theme__btn{
+            align-self: flex-end;
+            margin-bottom: 1rem;
+            margin-top: 0.25rem;
+            margin-right: 25rem;
+            width: 30px;
+            height: 30px;
+            display: grid;
+            place-items: center;
+            border-radius: 50%;
+            box-shadow: 2px 2px 4px var(--shadow-dim-bottom),
+                        2px 2px 4px var(--shadow-bright-uper);
+                        
+            border: 0.18rem solid var(--text-color-dark);
+            cursor: pointer;
+        }
+
+        /* i the moon and sun heighlt colors */
+        .theme__btn i{
+            color: var(--highlight-color);
+        }
+
+        .dark,
+        .light{
+
+            position: absolute;
+            transition: opacity 0.3s, transform 0.3s;
+        }
+        .light{
+            opacity: 0;
+        }
+
+
+        /*--------**----------****--------*/
+
+        /*---------Clock Container--------*/
+
+         .clock_container{
+            
+            width:450px;
+            height: 250px;
+            border: 0.15rem solid var(--text-color-dark);
+            border-radius: 8rem;
+            background-color: var(--text-color-light);
+            box-shadow: 6px 6px 10px var(--shadow-dim-bottom),
+                -4px -4px 10px var(--shadow-bright-uper);
+                display: grid;
+                place-items: center;
+         }
+         .clock_main_wrapper{
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            /* background-color: red; */
+         }
+
+         /* More things will be need here in clock after for clock circl already area and for number also but after add stop will need separate area for that adjust after */
+
+         .clock{
+            width: 100px;  /*if improved ment need for under specfic area width heigh will adjust from here*/
+            height: 100px;
+            position: relative;
+            background-color: var(--text-color-light);
+            border: 0.16rem solid var(--text-color-dark);
+            border-radius: 50%;  /* border radius make alaram area circle */
+            box-shadow: inset 2px 2px 5px var(--shadow-dim-bottom),
+                        inset -2px 2px 5px var(--shadow-bright-uper);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+        }
+        .center__circle{
+            /* both width height make small point in circle mid*/
+            width: 0.25rem; 
+            height: 0.25rem;
+        border: 1px solid var(--text-color-dark);
+        /* border raduius make the point change to circle like dot */
+        border-radius: 50%; 
+        border: 1px solid var(--text-color-dark);
+        z-index: 10;   
+        }
+
+    .hour__stick,
+    .minutes__stick{
+        position: absolute;
+        display: flex;
+        justify-content: center;
+    }
+
+    /* Hour stick */
+    .hour__stick{
+        width: 50px;
+        height: 50px;
+    }
+    .hour__stick::before{
+        content: "";
+        position: absolute;
+        width: 0.15rem;
+        height: 1.5rem;
+        background-color: var(--highlight-color);
+        border-radius: 1rem;
+        z-index: 1;
+
+    }
+    /* ------------------- */
+    /* we can add seconds stick here is well */
+    /* -----------**---------**----- */
+    /*Minutes Hand----*/
+    
+    .minutes__stick{
+        width: 80px;
+        height: 80px;
+    }
+    .minutes__stick::before{
+        content: "";
+        background-color: var(--highlight-color);
+        position: absolute;
+        width: 0.15rem;
+        height: 2.5rem;
+        border-radius: 1rem;
+        z-index:1;
+    }
+
+    /* ----**----***-------**----- */
+    /* clock Data */
+
+    .clock__content,
+    .clock__data{
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* clock time */
+
+    .clock__time{
+        font-size: 3rem;
+        font-weight: 500;
+        display: flex;
+    }
+    .time__ampm{
+        font-size: 0.75rem;
+        margin-left: 0.5rem;
+    }
+    .clock__day{
+        font-size: 0.8rem;
+        margin-bottom: -0.15rem;
+        color: var(--highlight-color);
+        font-weight: 500;
+    }
+    .clock__date{
+        font-size: 1.1rem;
+        font-weight: 500;
+    }
+
+    /* .................................. */
+
+/* dark theme */
+
+.dark__theme{
+    background-color: var(--body-color-dark);
+    color: var(--highlight-color);
+}
+.dark__theme .them__btn{
+    box-shadow: 2px 2px 4px var(--shadow-dim-bottom),
+    -2px -2px 4px var(--dark-bright);
+    border: 0.18rem solid var(--dark-border);
+}
+
+/*---------Clock Container--------*/
+
+
+/* Add this for dark theme */
+.dark__theme .clock_container {
+    background-color: #000; /* Set background to black for dark theme */
+    border: 0.15rem solid var(--highlight-color);
+    border-color: var(--dark-border); 
+    
+}
+
+/*
+.dark__theme .clock__container{
+    box-shadow: 6px 6px 10px var(--dark-dim),
+                -4px -4px 10px var(--dark-bright);
+    border: 0.15rem solid var(--dark-border);
+    background-color: var(--body-color-dark);
+    
+}
+*/
+.dark__theme .clock{
+    border: 0.16rem solid var(--dark-border);
+    box-shadow: inset 3px 3px 5px var(--shadow-dim-bottom),
+                inset -2px -2px 5px var(--shadow-bright-uper);
+
+}
+
+
+/* issue was here of not showing the icon of sun */
+/* Changing theme icons */
+.change__icon .dark{
+    opacity: 0;
+    transform: rotate(90deg);
+}
+.change__icon .light{
+    opacity: 1;
+    transform: rotate(90deg);
+}
+/* ------------------- */
+
+
+/* for large devices */
+
+@media screen and (min-width: 1250px) {
+    .main_container {
+        margin-inline: auto;
+        padding-inline: 1rem;
+    }
+
+    .clock__container {
+        width: 400px;
+        height: 200px;
+    }
+}
