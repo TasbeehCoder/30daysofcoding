@@ -1,74 +1,130 @@
-document.addEventListener('DOMContentLoaded', function () {
-    // About Me Section
-    const aboutMeLink = document.querySelector('.nav_list a[href="#aboutMe"]');
-    const aboutMeSection = document.querySelector('.about_section');
+// Recommendation form elements
+const reviewName = document.getElementById("name");
+const message = document.getElementById("message");
+const submitBtn = document.getElementById("submitBtn");
 
-    aboutMeLink.addEventListener('click', function (event) {
-        event.preventDefault();
-        scrollToSection(aboutMeSection);
-    });
+// Function to clear the recommendation form
+function clearRecommendationForm() {
+    reviewName.value = "";
+    message.value = "";
+}
 
-    // Skills Section
-    const skillsLink = document.querySelector('.nav_list a[href="#skills"]');
-    const skillsSection = document.querySelector('.skills_section');
+// Function to show popup on form submission
+function showRecommendationThanks(messageText) {
+    const popup = document.createElement("div");
+    popup.classList.add("popup", "active");
+    popup.innerHTML = messageText;
+    document.body.appendChild(popup);
 
-    skillsLink.addEventListener('click', function (event) {
-        event.preventDefault();
-        scrollToSection(skillsSection);
-    });
+    setTimeout(() => {
+        popup.classList.remove("active");
+        document.body.removeChild(popup);
+    }, 3000); // Hide popup after 3 seconds
+}
 
-    // Projects Section
-    const projectsLink = document.querySelector('.nav_list a[href="#projects"]');
-    const projectsSection = document.querySelector('.projects_section');
+submitBtn.addEventListener("click", function (event) {
+    event.preventDefault();
 
-    projectsLink.addEventListener('click', function (event) {
-        event.preventDefault();
-        scrollToSection(projectsSection);
-    });
-
-    // Recommendation Section
-    const recommendationLink = document.querySelector('.nav_list a[href="#recommendation"]');
-    const recommendationSection = document.querySelector('.recommendation_section');
-
-    recommendationLink.addEventListener('click', function (event) {
-        event.preventDefault();
-        scrollToSection(recommendationSection);
-    });
-
-    // Scroll to a section smoothly
-    function scrollToSection(section) {
-        section.scrollIntoView({ behavior: 'smooth' });
+    if (!reviewName.value || !message.value) {
+        alert("Please fill in both name and message fields.");
+        return;
     }
 
-    // Recommendation Form
-    const recommendationForm = document.querySelector('.form_recommendation');
-    const submitBtn = document.getElementById('submitBtn');
-
-    submitBtn.addEventListener('click', function (event) {
-        event.preventDefault();
-
-        // Assuming you have validation logic in the validateForm function
-        if (validateForm()) {
-            // Perform actions when the form is valid
-            alert('Recommendation submitted successfully!');
-            recommendationForm.reset(); // Optional: Reset the form
-        } else {
-            // Handle invalid form case, e.g., display an error message
-            alert('Please fill in all required fields.');
-        }
-    });
-
-    // Optional: Validation function to check if the form is valid
-    function validateForm() {
-        // Implement your validation logic here
-        // Return true if the form is valid, false otherwise
-        // Example: Check if required fields are filled
-        const requiredFields = document.querySelectorAll('.required');
-        for (const field of requiredFields) {
-            if (field.value.trim() === '') {
-                return false;
-            }
-        }
-        return true;
-    }
+    clearRecommendationForm();
+    showRecommendationThanks('Thank you for submitting your recommendation!');
+    console.log("Recommendation submitted!");
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//-----------------***********----------------//
+
+
+/*
+
+
+// Recommendation form elements
+const reviewName = document.getElementById("name");
+const message = document.getElementById("message");
+const submitBtn = document.getElementById("submitBtn");
+
+// Add submit event listener to the recommendation form
+submitBtn.addEventListener("click", function (event) {
+    event.preventDefault();
+
+    if (!reviewName.value || !message.value) {
+        alert("Please fill in both name and message fields.");
+        return;
+    }
+
+    // Function to show popup on form submission
+    function showRecommendationThanks(message) {
+        const popup = document.createElement("div");
+        popup.classList.add("popup", "active");
+        popup.innerHTML = message;
+        document.body.appendChild(popup);
+
+        setTimeout(() => {
+            popup.classList.remove("active");
+            document.body.removeChild(popup);
+        }, 3000); // Hide popup after 3 seconds
+    }
+
+    // Function to clear the recommendation form
+    function clearRecommendationForm() {
+        reviewName.value = "";
+        message.value = "";
+    }
+
+    // Submit the recommendation data (implement your desired method)
+    console.log("Recommendation submitted!");
+
+    showRecommendationThanks('Thank you for submitting your recommendation!');
+    clearRecommendationForm();
+});
+*/
+
+
+/*
+
+// Define the function outside the event handler
+function showRecommendationThanks(message) {
+    const popup = document.createElement("div");
+    popup.classList.add("popup", "active");
+    popup.innerHTML = message;
+    document.body.appendChild(popup);
+
+    setTimeout(() => {
+        popup.classList.remove("active");
+        document.body.removeChild(popup);
+    }, 3000); // Hide popup after 3 seconds
+}
+
+
+
+// Inside the click event handler, call the function with the desired message:
+showRecommendationThanks("Thank you for submitting your recommendation!");
+
+// ... validation and data submission logic ...
+
+showRecommendationThanks("Thank you for submitting your recommendation!");
+clearRecommendationForm();
+*/
