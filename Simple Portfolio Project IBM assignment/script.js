@@ -52,7 +52,7 @@ submitBtn.addEventListener("click", function (event) {
         }, 3000); // Hide popup after 3 seconds
     }
 
-    showRecommendationThanks('Thank you for submitting your recommendation!');
+    alert('Thank you for submitting your recommendation!');
     clearRecommendationForm();
     // ----Function to clear the recommendation form ---
 
